@@ -1,0 +1,5 @@
+.vscode
+supabase/.branches
+supabase/.env*
+supabase/.temp
+supabase/config.toml
