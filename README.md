@@ -1,2 +1,2 @@
-# AI-Tournament's backend
+# AI-Tournaments' backend
 Powered by Supabase.
