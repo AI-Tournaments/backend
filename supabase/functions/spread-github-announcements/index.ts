@@ -8,8 +8,8 @@ serve(async (req) => {
 
 	const { action, discussion } = await req.json()
 
-	let isCreated = action === 'created'
-	let isAnnouncement = discussion.category.id === 37846981
+	const isCreated = action === 'created'
+	const isAnnouncement = discussion.category.id === 37846981
 
 	if(isCreated && isAnnouncement){
 		fetch(new Request('https://discord.com/api/webhooks/1000065546252992602/F9dp4eUOMwe7MqRJCr6dyT8Y8Luzh72lWt9rnfwf5jR_8QqX3jNzPm1wPSm9rRCtxkJh', {
