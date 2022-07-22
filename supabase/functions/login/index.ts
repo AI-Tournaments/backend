@@ -3,7 +3,7 @@ import { corsAll as headers } from '../_shared/responseHeaders.ts'
 
 serve(async (req) => {
 	if(req.method === 'OPTIONS'){
-		return new Response('ok', { headers: headers });
+		return new Response('ok', { headers: headers })
 	}
 
 	const { oAuthCode, client_id } = await req.json()
