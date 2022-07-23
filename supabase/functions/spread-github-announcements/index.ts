@@ -9,7 +9,7 @@ serve(async (req) => {
 	const { action, discussion } = await req.json()
 
 	const isCreated = action === 'created'
-	const isAnnouncement = discussion.category.id === 37846981
+	const isAnnouncement = discussion.category.node_id === 'DIC_kwDOF2FhEs4CQX_F'
 	const discordAnnouncementWebhook = Deno.env.get('discord.announcementWebhook')
 
 	if(isCreated && isAnnouncement && discordAnnouncementWebhook){
