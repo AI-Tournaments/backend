@@ -10,9 +10,10 @@ serve(async (req) => {
 
 	const isCreated = action === 'created'
 	const isAnnouncement = discussion.category.id === 37846981
+	const discordAnnouncementWebhook = Deno.env.get('discord.announcementWebhook')
 
-	if(isCreated && isAnnouncement){
-		fetch(new Request('https://discord.com/api/webhooks/1000065546252992602/F9dp4eUOMwe7MqRJCr6dyT8Y8Luzh72lWt9rnfwf5jR_8QqX3jNzPm1wPSm9rRCtxkJh', {
+	if(isCreated && isAnnouncement && discordAnnouncementWebhook){
+		fetch(new Request(discordAnnouncementWebhook, {
 			method: 'POST',
 			headers: new Headers({
 				'Accept': 'application/json',
