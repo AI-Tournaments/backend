@@ -20,7 +20,7 @@ serve(async (req) => {
 				'Content-Type': 'application/json'
 			}),
 			body: JSON.stringify({
-				content: '**'+discussion.title+'**\n'+discussion.body
+				content: '['+discussion.title+']('+discussion.html_url+')'
 			})
 		}))
 	}
